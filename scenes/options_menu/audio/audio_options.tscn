@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://otacf7gyxcpp"]
+
+[ext_resource type="PackedScene" uid="uid://vg8so2noge5l" path="res://scenes/options_menu/base_option_container.tscn" id="1_agfwp"]
+[ext_resource type="Script" path="res://scenes/options_menu/audio/audio_options.gd" id="2_5rfua"]
+[ext_resource type="AudioStream" uid="uid://bqhk6k8j86kpi" path="res://assets/audio/sfx/UI select.wav" id="3_qisbs"]
+[ext_resource type="Script" path="res://scenes/options_menu/audio/volume_slider.gd" id="3_vwb7b"]
+
+[node name="AudioOptions" instance=ExtResource("1_agfwp")]
+script = ExtResource("2_5rfua")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.6
+anchor_bottom = 0.8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="MasterLabel" type="Label" parent="ScrollContainer/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="ScrollContainer/VBoxContainer" index="1"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_vwb7b")
+bus_name = "Master"
+
+[node name="MusicLabel" type="Label" parent="ScrollContainer/VBoxContainer" index="2"]
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="ScrollContainer/VBoxContainer" index="3"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_vwb7b")
+bus_name = "Music"
+
+[node name="SFXLabel" type="Label" parent="ScrollContainer/VBoxContainer" index="4"]
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="ScrollContainer/VBoxContainer" index="5"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_vwb7b")
+bus_name = "SFX"
+
+[node name="AmbienceLabel" type="Label" parent="ScrollContainer/VBoxContainer" index="6"]
+visible = false
+layout_mode = 2
+text = "Ambience"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AmbienceSlider" type="HSlider" parent="ScrollContainer/VBoxContainer" index="7"]
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_vwb7b")
+bus_name = "Ambience"
+
+[node name="SFXSound" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("3_qisbs")
+bus = &"SFX"
+
+[connection signal="drag_ended" from="ScrollContainer/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]

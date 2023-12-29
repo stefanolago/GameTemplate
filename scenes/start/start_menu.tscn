@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8i4dav4givqf"]
+
+[ext_resource type="Script" path="res://scenes/start/start_menu.gd" id="1_l8e1a"]
+[ext_resource type="PackedScene" uid="uid://bxlfyph8igh8b" path="res://scenes/options_menu/options_menu.tscn" id="1_q0fgv"]
+[ext_resource type="AudioStream" uid="uid://bxvstvsary0fk" path="res://assets/audio/music/cat music.wav" id="3_mxssh"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_l8e1a")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.298039, 0.592157, 1)
+
+[node name="Buttons" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.725309
+anchor_right = 0.6
+anchor_bottom = 0.935185
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 15
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" type="Button" parent="Control/Buttons"]
+layout_mode = 2
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="Control/Buttons"]
+layout_mode = 2
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="Control/Buttons"]
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="Control/Buttons"]
+layout_mode = 2
+text = "Quit"
+
+[node name="OptionsMenu" parent="Control" instance=ExtResource("1_q0fgv")]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.8
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("3_mxssh")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="Control/Buttons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="close_option_menu" from="Control/OptionsMenu" to="." method="_on_options_menu_close_option_menu"]

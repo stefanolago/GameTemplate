@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0l8f2a2moux7"]
+
+[ext_resource type="PackedScene" uid="uid://vg8so2noge5l" path="res://scenes/options_menu/base_option_container.tscn" id="1_un745"]
+[ext_resource type="Script" path="res://scenes/options_menu/graphics/graphic_options.gd" id="2_jalhp"]
+[ext_resource type="PackedScene" uid="uid://snqowq1n0sbl" path="res://scenes/options_menu/graphics/window_mode_options.tscn" id="3_sghtq"]
+[ext_resource type="PackedScene" uid="uid://chc664f6apikt" path="res://scenes/options_menu/graphics/resolution_options.tscn" id="4_rokyq"]
+
+[node name="GraphicOptions" instance=ExtResource("1_un745")]
+script = ExtResource("2_jalhp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+metadata/_edit_use_anchors_ = true
+
+[node name="WindowMode" parent="VBoxContainer" index="0" instance=ExtResource("3_sghtq")]
+layout_mode = 2
+
+[node name="Container" parent="VBoxContainer" index="1" instance=ExtResource("4_rokyq")]
+layout_mode = 2
+
+[node name="FullscreenCheckbox" type="CheckBox" parent="VBoxContainer" index="2"]
+visible = false
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Fullscreen"
+
+[connection signal="toggled" from="VBoxContainer/FullscreenCheckbox" to="." method="_on_fullscreen_checkbox_toggled"]

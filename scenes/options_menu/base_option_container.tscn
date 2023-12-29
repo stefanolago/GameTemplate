@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://vg8so2noge5l"]
+
+[ext_resource type="Script" path="res://scenes/options_menu/base_option_container.gd" id="1_0blhu"]
+
+[node name="BaseOptionContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0blhu")
+
+[node name="Confirm" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.5
+offset_top = -48.0
+offset_right = 35.5
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Confirm"
+
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
