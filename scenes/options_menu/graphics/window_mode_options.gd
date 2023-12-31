@@ -10,7 +10,7 @@ const WINDOW_MODE_ARRAY: Array[String] = [
 	"Borderless Window"
 ]
 
-func _ready():
+func _ready() -> void:
 	for window_mode in WINDOW_MODE_ARRAY:
 		options_button.add_item(window_mode)
 

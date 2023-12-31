@@ -10,7 +10,7 @@ var input_name: StringName:
 		update_content()
 
 
-func update_content():
+func update_content() -> void:
 	# Update the Action name label with the input name
 	$ActionName.text = input_name.capitalize()
 
@@ -23,5 +23,5 @@ func update_content():
 	$Keybinding.text = input_string
 
 
-func _on_change_button_pressed():
+func _on_change_button_pressed() -> void:
 	change_keybinding.emit(input_name)

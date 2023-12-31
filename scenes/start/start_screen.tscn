@@ -133,7 +133,7 @@ start_menu_scene = ExtResource("2_n5fsx")
 [node name="LogoLight" type="PointLight2D" parent="."]
 position = Vector2(573, 325)
 scale = Vector2(1.435, 0.8075)
-energy = 2.65
+energy = 0.0
 texture = ExtResource("3_6lwqq")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]

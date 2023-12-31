@@ -9,7 +9,7 @@ var configurable_inputs: Array[StringName]
 var waiting_for_input: bool = false
 var input_to_change: StringName
 
-func _ready():
+func _ready() -> void:
 	var inputs: Array = InputMap.get_actions()
 
 	# retrieve the possible actions, by removing the built-in ones
@@ -27,13 +27,13 @@ func _ready():
 
 # when the change button of a row is pressed, then the 
 # popup appears and the game waits for an input
-func _on_keybinding_button_change_keybinding(input: StringName):
+func _on_keybinding_button_change_keybinding(input: StringName) -> void:
 	waiting_for_input = true
 	$KeyPressPopup.visible = true
 	input_to_change = input
 
 # if it is waiting for an input then manage the reconfiguration of the keybind
-func _input(event: InputEvent):
+func _input(event: InputEvent) -> void:
 	if(waiting_for_input && (event is InputEventKey || event is InputEventMouseButton) && !event.is_pressed()):
 
 		# if the key pressed is different than the one that the 
@@ -58,14 +58,14 @@ func _input(event: InputEvent):
 		$KeyPressPopup.visible = false
 
 
-func remove_inputevent(event: InputEvent):
+func remove_inputevent(event: InputEvent) -> void:
 	for action in InputMap.get_actions():
 		for inputevent in InputMap.action_get_events(action):
 			if(inputevent.as_text() == event.as_text()):
 				InputMap.action_erase_event(action, inputevent)
 
 
-func remove_extra_events(action: StringName):
+func remove_extra_events(action: StringName) -> void:
 	var inputevents: Array[InputEvent] = InputMap.action_get_events(action)
 	if(len(inputevents) > 2):
 		InputMap.action_erase_event(action, inputevents[0])

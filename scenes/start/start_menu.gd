@@ -11,3 +11,7 @@ func options_menu(activated: bool) -> void:
 	$Control/OptionsMenu.visible = activated
 	for button: Button in $Control/Buttons.get_children():
 		button.disabled = activated
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()

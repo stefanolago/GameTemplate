@@ -68,4 +68,5 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="Control/Buttons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Control/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="close_option_menu" from="Control/OptionsMenu" to="." method="_on_options_menu_close_option_menu"]
