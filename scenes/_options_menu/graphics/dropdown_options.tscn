@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cc4kfy0fflokd"]
+
+[node name="Container" type="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+size_flags_horizontal = 4
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option"
+
+[node name="Options" type="OptionButton" parent="."]
+custom_minimum_size = Vector2(150, 33)
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 1

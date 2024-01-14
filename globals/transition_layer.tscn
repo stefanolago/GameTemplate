@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://danxys2mt5kqj"]
+[gd_scene load_steps=5 format=3 uid="uid://danxys2mt5kqj"]
 
 [ext_resource type="Script" path="res://globals/transition_layer.gd" id="1_m2dqr"]
 
@@ -17,12 +17,30 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_focd0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wg0ys"]
 _data = {
+"RESET": SubResource("Animation_focd0"),
 "fade_to_black": SubResource("Animation_grd20")
 }
 
 [node name="TransitionLayer" type="CanvasLayer"]
+process_mode = 3
+layer = 10
 script = ExtResource("1_m2dqr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -32,9 +50,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="TransitionAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wg0ys")
 }

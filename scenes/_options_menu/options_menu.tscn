@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxlfyph8igh8b"]
+
+[ext_resource type="Script" path="res://scenes/_options_menu/options_menu.gd" id="1_lpdjf"]
+[ext_resource type="PackedScene" uid="uid://b0l8f2a2moux7" path="res://scenes/_options_menu/graphics/graphic_options.tscn" id="2_wg4hq"]
+[ext_resource type="PackedScene" uid="uid://bn262vdj37am2" path="res://scenes/_options_menu/control/controls_options.tscn" id="3_x3wbb"]
+[ext_resource type="PackedScene" uid="uid://otacf7gyxcpp" path="res://scenes/_options_menu/audio/audio_options.tscn" id="4_a1oik"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muirh"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lpdjf")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_muirh")
+
+[node name="Graphics" parent="TabContainer" instance=ExtResource("2_wg4hq")]
+layout_mode = 2
+
+[node name="Keybindings" parent="TabContainer" instance=ExtResource("3_x3wbb")]
+visible = false
+layout_mode = 2
+
+[node name="Audio" parent="TabContainer" instance=ExtResource("4_a1oik")]
+visible = false
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0164931
+anchor_top = 0.91358
+anchor_right = 0.0555556
+anchor_bottom = 0.96142
+grow_vertical = 0
+text = " < Back "
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

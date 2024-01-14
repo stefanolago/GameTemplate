@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnqo4s30b70bv"]
+
+[ext_resource type="Script" path="res://scenes/_options_menu/control/keybinding_button.gd" id="1_meb56"]
+
+[sub_resource type="Theme" id="Theme_yd13l"]
+BoxContainer/constants/separation = 50
+
+[node name="KeybindingButton" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_yd13l")
+alignment = 1
+script = ExtResource("1_meb56")
+
+[node name="ActionName" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "TestAction
+"
+vertical_alignment = 1
+
+[node name="Keybinding" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "W / UP"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ChangeButton" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "Change..."
+alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ChangeButton" to="." method="_on_change_button_pressed"]

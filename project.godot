@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameTemplate"
-run/main_scene="res://scenes/start/start_screen.tscn"
+run/main_scene="res://scenes/_start/start_screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/image="res://assets/art/splash/GWJ-Full-Logo-tag-Orange2.png"
@@ -29,7 +29,6 @@ gdscript/warnings/unsafe_property_access=1
 gdscript/warnings/unsafe_method_access=1
 gdscript/warnings/unsafe_cast=1
 gdscript/warnings/unsafe_call_argument=1
-gdscript/warnings/return_value_discarded=1
 
 [file_customization]
 
@@ -38,6 +37,10 @@ folder_colors={
 "res://globals/": "yellow",
 "res://scenes/": "green"
 }
+
+[gui]
+
+theme/custom_font="res://assets/fonts/04B_03__.TTF"
 
 [input]
 
