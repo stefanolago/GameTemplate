@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://c1njiprrfr8ni"]
+
+[resource]
+file_path = "res://fmod/banks/SFX.bank"
+modified_time = 1706642134
+path = "bank:/SFX"
+guid = "{ddab4e97-21a5-4001-af0a-569940cd6143}"
+name = "SFX"

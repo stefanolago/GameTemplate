@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{419d1ed3-11a3-4597-aad4-0684c2f79b09}">
+		<property name="assetPath">
+			<value>cat music.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>148.961768707483</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{09413b14-ae33-4e69-8443-7547e28a2506}</destination>
+		</relationship>
+	</object>
+</objects>

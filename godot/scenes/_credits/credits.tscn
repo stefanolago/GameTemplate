@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkhsruehu1ue6"]
+
+[ext_resource type="Script" path="res://scenes/_credits/credits.gd" id="1_v0gdx"]
+
+[sub_resource type="Theme" id="Theme_ba7kw"]
+Label/font_sizes/font_size = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tndvc"]
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v0gdx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.298039, 0.592157, 1)
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.15
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.95
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="ArtLabel" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ba7kw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tndvc")
+text = "-- Art --"
+horizontal_alignment = 1
+
+[node name="Artist" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Antea"
+horizontal_alignment = 1
+
+[node name="ProgrammingLabel" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ba7kw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tndvc")
+text = "-- Programming --"
+horizontal_alignment = 1
+
+[node name="Programmer" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Jafarrolo"
+horizontal_alignment = 1
+
+[node name="SoundMusicLabel" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ba7kw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tndvc")
+text = "-- Sound & Music --"
+horizontal_alignment = 1
+
+[node name="Musician" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Andrea Guerriero"
+horizontal_alignment = 1
+
+[node name="WritingLabel" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ba7kw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tndvc")
+text = "-- Writing --"
+horizontal_alignment = 1
+
+[node name="Writer" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Montoya"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.914
+anchor_right = 0.056
+anchor_bottom = 0.961
+grow_vertical = 0
+text = " < Back 
+"
+
+[connection signal="mouse_entered" from="ColorRect/BackButton" to="." method="_on_back_button_mouse_entered"]
+[connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]
