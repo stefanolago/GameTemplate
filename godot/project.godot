@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 TransitionLayer="*res://globals/transition_layer.tscn"
 FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
 FmodSound="*res://globals/fmod_sound.tscn"
+PauseScreen="*res://globals/pause_screen.tscn"
 
 [debug]
 
