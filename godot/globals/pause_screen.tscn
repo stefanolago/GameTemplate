@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d00ab3nid7erq"]
+[gd_scene load_steps=5 format=3 uid="uid://d00ab3nid7erq"]
 
 [ext_resource type="Script" path="res://globals/pause_screen.gd" id="1_3po7b"]
 [ext_resource type="PackedScene" uid="uid://bxlfyph8igh8b" path="res://scenes/_options_menu/options_menu.tscn" id="1_rlkwg"]
-[ext_resource type="Texture2D" uid="uid://b2wh8kyf3m41s" path="res://icon.svg" id="2_6poin"]
 [ext_resource type="Shader" path="res://globals/pause_screen.gdshader" id="3_3d0f8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nedia"]
@@ -13,16 +12,6 @@ shader_parameter/lod = 2.0
 process_mode = 3
 layer = 99
 script = ExtResource("1_3po7b")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_6poin")
-stretch_mode = 1
 
 [node name="BlurringBackground" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_nedia")

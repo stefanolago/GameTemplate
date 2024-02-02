@@ -44,7 +44,10 @@ folder_colors={
 "res://assets/": "red",
 "res://fmod/": "pink",
 "res://globals/": "yellow",
-"res://scenes/": "green"
+"res://scenes/": "green",
+"res://scenes/_credits/": "gray",
+"res://scenes/_options_menu/": "gray",
+"res://scenes/_start/": "gray"
 }
 
 [fmod]
