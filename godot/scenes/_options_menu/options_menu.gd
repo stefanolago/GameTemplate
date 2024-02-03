@@ -2,7 +2,10 @@ extends Control
 
 signal close_option_menu
 
-## is it working?
+## if true then the back button is hidden and the quit button is visible
+## if false then the back button is visible and the quit button is visible
+## this is needed to not duplicate the option screen since it is exactly the same 
+## that we use in the option screen
 @export var show_as_pause_screen: bool = false
 
 
@@ -19,12 +22,7 @@ func _ready() -> void:
 
 
 func _on_back_button_pressed() -> void:
-	FMODRuntime.play_one_shot_id(FMODGuids.Events.UI_BACK)
 	close_option_menu.emit()
-
-
-func _on_back_button_mouse_entered() -> void:
-	FMODRuntime.play_one_shot_id(FMODGuids.Events.UI_HOVER)
 
 
 func _on_quit_button_pressed() -> void:

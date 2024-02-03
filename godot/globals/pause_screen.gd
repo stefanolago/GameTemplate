@@ -18,6 +18,7 @@ var game_is_paused: bool = false:
 
 		options_menu.visible = game_is_paused
 		get_tree().paused = game_is_paused
+		#get_tree().current_scene.set_process(PROCESS_MODE_DISABLED if game_is_paused else PROCESS_MODE_INHERIT)
 		shader_material.set_shader_parameter("lod", blur_amount_when_paused if game_is_paused else 0.0)
 
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxlfyph8igh8b"]
+[gd_scene load_steps=7 format=3 uid="uid://bxlfyph8igh8b"]
 
 [ext_resource type="Script" path="res://scenes/_options_menu/options_menu.gd" id="1_lpdjf"]
 [ext_resource type="PackedScene" uid="uid://b0l8f2a2moux7" path="res://scenes/_options_menu/graphics/graphic_options.tscn" id="2_wg4hq"]
 [ext_resource type="PackedScene" uid="uid://bn262vdj37am2" path="res://scenes/_options_menu/control/controls_options.tscn" id="3_x3wbb"]
 [ext_resource type="PackedScene" uid="uid://otacf7gyxcpp" path="res://scenes/_options_menu/audio/audio_options.tscn" id="4_a1oik"]
+[ext_resource type="Script" path="res://scenes/_utils/button_with_sound.gd" id="5_0nyx0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muirh"]
 bg_color = Color(0.180392, 0.180392, 0.180392, 1)
@@ -46,6 +47,9 @@ anchor_right = 0.0555556
 anchor_bottom = 0.96142
 grow_vertical = 0
 text = " < Back "
+script = ExtResource("5_0nyx0")
+pressed_sound_guid = "{5f935a79-647b-47b9-8cc4-a4d69c8b919f}"
+on_mouse_enter_sound_guid = null
 metadata/_edit_use_anchors_ = true
 
 [node name="QuitButton" type="Button" parent="."]
@@ -56,8 +60,10 @@ anchor_top = 0.914
 anchor_right = 0.55
 anchor_bottom = 0.961
 text = "Quit"
+script = ExtResource("5_0nyx0")
+pressed_sound_guid = null
+on_mouse_enter_sound_guid = null
 metadata/_edit_use_anchors_ = true
 
-[connection signal="mouse_entered" from="BackButton" to="." method="_on_back_button_mouse_entered"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
