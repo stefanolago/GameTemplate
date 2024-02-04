@@ -1,5 +1,7 @@
 extends Control
 
+class_name OptionsMenu
+
 signal close_option_menu
 
 ## if true then the back button is hidden and the quit button is visible
@@ -11,6 +13,7 @@ signal close_option_menu
 
 @onready var back_button: Button = $BackButton
 @onready var quit_button: Button = $QuitButton
+@onready var tab_container: TabContainer = $TabContainer
 
 func _ready() -> void:
 	if show_as_pause_screen:
@@ -27,3 +30,7 @@ func _on_back_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func focus_first_available_control() -> void:
+	tab_container.get_tab_bar().grab_focus()

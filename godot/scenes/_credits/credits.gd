@@ -1,9 +1,13 @@
 extends Control
 
+class_name Credits
+
+signal back_button_pressed
+
 
 func _on_back_button_pressed() -> void:
-	FMODRuntime.play_one_shot_id(FMODGuids.Events.UI_BACK)
-	visible = false
+	back_button_pressed.emit()
 
-func _on_back_button_mouse_entered() -> void:
-	FMODRuntime.play_one_shot_id(FMODGuids.Events.UI_HOVER)
+
+func focus_first_available_control() -> void:
+	($BackButton as Button).grab_focus()

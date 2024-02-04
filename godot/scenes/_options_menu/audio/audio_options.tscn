@@ -31,7 +31,7 @@ vertical_alignment = 1
 [node name="MasterSlider" type="HSlider" parent="ScrollContainer/VBoxContainer" index="1"]
 layout_mode = 2
 max_value = 1.0
-step = 0.001
+step = 0.02
 script = ExtResource("3_vwb7b")
 bus_name = "Master"
 
@@ -44,7 +44,7 @@ vertical_alignment = 1
 [node name="MusicSlider" type="HSlider" parent="ScrollContainer/VBoxContainer" index="3"]
 layout_mode = 2
 max_value = 1.0
-step = 0.001
+step = 0.02
 script = ExtResource("3_vwb7b")
 bus_name = "Music"
 
@@ -57,7 +57,7 @@ vertical_alignment = 1
 [node name="SFXSlider" type="HSlider" parent="ScrollContainer/VBoxContainer" index="5"]
 layout_mode = 2
 max_value = 1.0
-step = 0.001
+step = 0.02
 script = ExtResource("3_vwb7b")
 bus_name = "SFX"
 
@@ -72,7 +72,7 @@ vertical_alignment = 1
 visible = false
 layout_mode = 2
 max_value = 1.0
-step = 0.001
+step = 0.02
 script = ExtResource("3_vwb7b")
 bus_name = "Ambience"
 

@@ -3,7 +3,7 @@ extends CanvasLayer
 
 @export var blur_amount_when_paused: float = 2.0
 
-@onready var options_menu: Control = $OptionsMenu
+@onready var options_menu: OptionsMenu = $OptionsMenu
 @onready var shader_material: ShaderMaterial = ($BlurringBackground as ColorRect).material
 
 var mouse_mode_before_pause: Input.MouseMode = Input.MouseMode.MOUSE_MODE_VISIBLE 
@@ -18,7 +18,6 @@ var game_is_paused: bool = false:
 
 		options_menu.visible = game_is_paused
 		get_tree().paused = game_is_paused
-		#get_tree().current_scene.set_process(PROCESS_MODE_DISABLED if game_is_paused else PROCESS_MODE_INHERIT)
 		shader_material.set_shader_parameter("lod", blur_amount_when_paused if game_is_paused else 0.0)
 
 
@@ -33,3 +32,4 @@ func _input(event: InputEvent) -> void:
 		if current_scene_name == "StartMenu" or current_scene_name == "StartScreen":
 			return
 		game_is_paused = !game_is_paused
+		options_menu.focus_first_available_control()
