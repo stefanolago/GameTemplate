@@ -9,6 +9,9 @@ font_size = 25
 [node name="ControlsOptions" instance=ExtResource("1_2jppr")]
 script = ExtResource("2_byjrj")
 
+[node name="Confirm" parent="." index="0"]
+visible = true
+
 [node name="ScrollContainer" type="ScrollContainer" parent="." index="1"]
 layout_mode = 1
 anchors_preset = -1
@@ -49,3 +52,14 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Press a key"
 label_settings = SubResource("LabelSettings_a46hf")
+
+[node name="Haptics" type="CheckBox" parent="." index="3"]
+layout_mode = 0
+offset_left = 704.0
+offset_top = 40.0
+offset_right = 894.0
+offset_bottom = 64.0
+button_pressed = true
+text = "Controller Vibration"
+
+[connection signal="toggled" from="Haptics" to="." method="_on_haptics_toggled"]

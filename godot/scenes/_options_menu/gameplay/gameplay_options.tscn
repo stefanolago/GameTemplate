@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc1hi8xrpang6"]
+
+[ext_resource type="PackedScene" uid="uid://dd3bbxwgn73xi" path="res://scenes/_options_menu/gameplay/difficulty_options.tscn" id="1_xw8kt"]
+
+[node name="GameplayOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+metadata/_edit_use_anchors_ = true
+
+[node name="Container" parent="VBoxContainer" instance=ExtResource("1_xw8kt")]
+layout_mode = 2

@@ -23,6 +23,8 @@ FmodSound="*res://globals/fmod_sound.tscn"
 FMODRuntime="*res://globals/fmod_runtime_manager.tscn"
 TransitionLayer="*res://globals/transition_layer.tscn"
 PauseScreen="*res://globals/pause_screen.tscn"
+GameSettings="*res://globals/game_settings.gd"
+GameStats="*res://globals/game_stats.gd"
 
 [debug]
 

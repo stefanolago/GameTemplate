@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8i4dav4givqf"]
+[gd_scene load_steps=7 format=3 uid="uid://b8i4dav4givqf"]
 
 [ext_resource type="Script" path="res://scenes/_start/start_menu.gd" id="1_l8e1a"]
 [ext_resource type="PackedScene" uid="uid://bxlfyph8igh8b" path="res://scenes/_options_menu/options_menu.tscn" id="1_q0fgv"]
-[ext_resource type="PackedScene" uid="uid://borkwi8sak2ay" path="res://scenes/game/levels/level1.tscn" id="2_mlawk"]
+[ext_resource type="PackedScene" uid="uid://borkwi8sak2ay" path="res://scenes/game/levels/Level1.tscn" id="2_mlawk"]
 [ext_resource type="PackedScene" uid="uid://dkhsruehu1ue6" path="res://scenes/_credits/credits.tscn" id="3_drggk"]
 [ext_resource type="Script" path="res://scenes/_utils/button_with_sound.gd" id="3_o8bey"]
+[ext_resource type="Texture2D" uid="uid://bt6bmv0xk7rub" path="res://assets/art/splash/controller_icon.png" id="6_r4t5b"]
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_l8e1a")
@@ -27,6 +28,32 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0941176, 0.298039, 0.592157, 1)
 
+[node name="Controller" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.8
+offset_left = -16.0
+offset_top = 445.0
+offset_right = -971.0
+offset_bottom = 153.6
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_r4t5b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Controller"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 162.0
+offset_right = 144.0
+offset_bottom = 197.0
+text = "CONTROLLER
+SUPPORTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Buttons" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
@@ -44,29 +71,21 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 text = "Play"
 script = ExtResource("3_o8bey")
-pressed_sound_guid = null
-on_mouse_enter_sound_guid = null
 
 [node name="OptionsButton" type="Button" parent="Control/Buttons"]
 layout_mode = 2
 text = "Options"
 script = ExtResource("3_o8bey")
-pressed_sound_guid = null
-on_mouse_enter_sound_guid = null
 
 [node name="CreditsButton" type="Button" parent="Control/Buttons"]
 layout_mode = 2
 text = "Credits"
 script = ExtResource("3_o8bey")
-pressed_sound_guid = null
-on_mouse_enter_sound_guid = null
 
 [node name="QuitButton" type="Button" parent="Control/Buttons"]
 layout_mode = 2
 text = "Quit"
 script = ExtResource("3_o8bey")
-pressed_sound_guid = null
-on_mouse_enter_sound_guid = null
 
 [node name="OptionsMenu" parent="Control" instance=ExtResource("1_q0fgv")]
 visible = false
