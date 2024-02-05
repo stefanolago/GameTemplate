@@ -34,7 +34,9 @@ func _ready() -> void:
 	music_instance = FMODRuntime.create_instance_id(FMODGuids.Events.MUSIC_MENU)
 	music_instance.start()
 	enable_main_screen(true)
-	GameSettings.load_settings() # load the saved game settings
+	# load the saved game settings
+	GameSettings.load_settings()
+	GameSettings.emit_signal("load_all_settings")
 
 
 func enable_main_screen(enable: bool) -> void:
