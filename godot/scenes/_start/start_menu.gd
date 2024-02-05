@@ -33,9 +33,9 @@ var state: State = State.MAIN_VISIBLE:
 func _ready() -> void:
 	music_instance = FMODRuntime.create_instance_id(FMODGuids.Events.MUSIC_MENU)
 	music_instance.start()
-
 	enable_main_screen(true)
-	
+	GameSettings.load_settings() # load the saved game settings
+
 
 func enable_main_screen(enable: bool) -> void:
 	# disable the buttons in the background and stop the ability to get focus

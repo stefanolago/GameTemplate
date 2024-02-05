@@ -12,11 +12,19 @@ const RESOLUTION_DICTIONARY: Dictionary = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	options_button.item_selected.connect(on_resolution_selected)
 	for resolution: String in RESOLUTION_DICTIONARY:
 		options_button.add_item(resolution)
+	
+	options_button.selected = GameSettings.resolution # load previous settings
+	on_resolution_selected(GameSettings.resolution, false) # apply previous settings
+	options_button.item_selected.connect(on_resolution_selected)
 
-
-func on_resolution_selected(index: int) -> void:
+func on_resolution_selected(index: int, save_settings:bool = true) -> void:
 	var window_size: Vector2i = RESOLUTION_DICTIONARY.values()[index]
 	DisplayServer.window_set_size(window_size)
+
+	# save settings
+	if save_settings:
+		GameSettings.resolution = index
+		GameSettings.save_settings()
+

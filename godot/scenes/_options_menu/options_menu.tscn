@@ -67,5 +67,23 @@ text = "Quit"
 script = ExtResource("5_0nyx0")
 metadata/_edit_use_anchors_ = true
 
+[node name="Save_debug" type="Button" parent="."]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 294.0
+offset_right = 581.0
+offset_bottom = 318.0
+text = "SAVE"
+
+[node name="Load_debug" type="Button" parent="."]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 331.0
+offset_right = 580.0
+offset_bottom = 355.0
+text = "LOAD"
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Save_debug" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Load_debug" to="." method="_on_load_pressed"]
