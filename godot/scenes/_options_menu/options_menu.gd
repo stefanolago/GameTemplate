@@ -35,11 +35,3 @@ func _on_quit_button_pressed() -> void:
 
 func focus_first_available_control() -> void:
 	tab_container.get_tab_bar().grab_focus()
-
-
-func _on_save_pressed() -> void: # temp debug
-	GameSettings.save_settings()
-
-
-func _on_load_pressed() -> void: # temp debug
-	GameSettings.load_settings()

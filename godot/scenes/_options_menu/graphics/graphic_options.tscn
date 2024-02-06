@@ -24,6 +24,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 
 [node name="Container" parent="VBoxContainer" index="1" instance=ExtResource("4_rokyq")]
+visible = false
 layout_mode = 2
 
 [node name="FullscreenCheckbox" type="CheckBox" parent="VBoxContainer" index="2"]

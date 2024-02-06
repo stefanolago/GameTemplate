@@ -34,7 +34,9 @@ func _ready() -> void:
 	music_instance = FMODRuntime.create_instance_id(FMODGuids.Events.MUSIC_MENU)
 	music_instance.start()
 	enable_main_screen(true)
-	GameSettings.load_settings() # load the saved game settings
+	# load the saved game settings
+	GameSettings.load_settings()
+	GameSettings.emit_signal("load_all_settings")
 
 
 func enable_main_screen(enable: bool) -> void:
@@ -83,6 +85,8 @@ func _on_quit_button_pressed() -> void:
 
 
 func _on_play_button_pressed() -> void:
+	GameStats.reset_stats() # initialize the stats
+	GameStats.save_stats() # write the config file to save stats
 	music_instance.stop(FMODStudioModule.FMOD_STUDIO_STOP_ALLOWFADEOUT)
 	TransitionLayer.change_scene(start_game_scene)
 
@@ -97,4 +101,3 @@ func _input(_event: InputEvent) -> void:
 				options_menu.focus_first_available_control()
 			State.CREDITS_VISIBLE:
 				credits_screen.focus_first_available_control()
-		
