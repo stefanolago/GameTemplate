@@ -106,3 +106,10 @@ func action_erase_event(action_name: StringName, event: InputEvent) -> void:
 			InputMap.action_erase_event(built_in_action, event)
 	
 	InputMap.action_erase_event(action_name, event)
+
+
+func _on_haptics_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		GameSettings.haptics_strenght = 1
+	else:
+		GameSettings.haptics_strenght = 0

@@ -15,6 +15,7 @@ signal close_option_menu
 @onready var quit_button: Button = $QuitButton
 @onready var tab_container: TabContainer = $TabContainer
 
+
 func _ready() -> void:
 	if show_as_pause_screen:
 		back_button.visible = false
