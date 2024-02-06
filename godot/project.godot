@@ -48,6 +48,7 @@ enabled=PackedStringArray("res://addons/FMOD/plugin.cfg")
 folder_colors={
 "res://addons/": "blue",
 "res://assets/": "red",
+"res://engine/": "orange",
 "res://fmod/": "pink",
 "res://globals/": "yellow",
 "res://scenes/": "green",
