@@ -1,11 +1,13 @@
 extends HSlider
 
 @export var bus_name: String
+@export var bus_asset: BusAsset
 
-var bus_index: int
+var bus: Bus
 
 func _ready() -> void:
-	bus_index = AudioServer.get_bus_index(bus_name)
+	#bus = FMODStudioModule.get_studio_system().get_bus_by_id(FMODGuids.Busses.MASTER_BUS)
+	drag_ended.connect(on_drag_ended)
 	GameSettings.connect('load_all_settings', load_settings)
 
 func load_settings() -> void:
@@ -24,10 +26,8 @@ func load_settings() -> void:
 
 
 func on_value_changed(val: float, save_settings:bool = true) -> void:
-	AudioServer.set_bus_volume_db(
-		bus_index,
-		linear_to_db(val)
-	)
+	#bus.set_volume(linear_to_db(val))
+	#bus_asset.setFaderLevel(linear_to_db(val))
 	# save settings
 	if save_settings:
 		match bus_name:
@@ -37,4 +37,6 @@ func on_value_changed(val: float, save_settings:bool = true) -> void:
 				GameSettings.music_volume = val
 			"SFX":
 				GameSettings.sfx_volume = val
-		GameSettings.save_settings()
+
+func on_drag_ended(value_changed: bool) -> void:
+	GameSettings.save_settings()
