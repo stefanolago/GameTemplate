@@ -6,7 +6,7 @@ extends HSlider
 var bus: Bus
 
 func _ready() -> void:
-	#bus = FMODStudioModule.get_studio_system().get_bus_by_id(FMODGuids.Busses.MASTER_BUS)
+	bus = FMODStudioModule.get_studio_system().get_bus(bus_asset.path)
 	drag_ended.connect(on_drag_ended)
 	GameSettings.connect('load_all_settings', load_settings)
 
@@ -26,8 +26,7 @@ func load_settings() -> void:
 
 
 func on_value_changed(val: float, save_settings:bool = true) -> void:
-	#bus.set_volume(linear_to_db(val))
-	#bus_asset.setFaderLevel(linear_to_db(val))
+	bus.set_volume(val)
 	# save settings
 	if save_settings:
 		match bus_name:

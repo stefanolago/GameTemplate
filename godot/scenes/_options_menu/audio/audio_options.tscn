@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://otacf7gyxcpp"]
+[gd_scene load_steps=7 format=3 uid="uid://otacf7gyxcpp"]
 
 [ext_resource type="PackedScene" uid="uid://vg8so2noge5l" path="res://scenes/_options_menu/base_option_container.tscn" id="1_agfwp"]
 [ext_resource type="Script" path="res://scenes/_options_menu/audio/audio_options.gd" id="2_5rfua"]
 [ext_resource type="Script" path="res://scenes/_options_menu/audio/volume_slider.gd" id="3_vwb7b"]
 [ext_resource type="BusAsset" uid="uid://bt4aumspbn0hm" path="res://addons/FMOD/editor/resources/busses/{a732f4ae-00f0-48b7-8678-cce612b7aebc}.tres" id="4_33jys"]
+[ext_resource type="BusAsset" uid="uid://cwxlbv7pt8vli" path="res://addons/FMOD/editor/resources/busses/{e6c1964f-b6b0-400b-9281-c781d1740d4c}.tres" id="4_lhr5v"]
+[ext_resource type="BusAsset" uid="uid://bv75weemqypyi" path="res://addons/FMOD/editor/resources/busses/{986b7e0a-1641-4330-9a94-584e1a1a558f}.tres" id="6_t6n1r"]
 
 [node name="AudioOptions" instance=ExtResource("1_agfwp")]
 script = ExtResource("2_5rfua")
@@ -48,7 +50,7 @@ max_value = 1.0
 step = 0.02
 script = ExtResource("3_vwb7b")
 bus_name = "Music"
-bus_asset = ExtResource("4_33jys")
+bus_asset = ExtResource("4_lhr5v")
 
 [node name="SFXLabel" type="Label" parent="ScrollContainer/VBoxContainer" index="4"]
 layout_mode = 2
@@ -62,7 +64,7 @@ max_value = 1.0
 step = 0.02
 script = ExtResource("3_vwb7b")
 bus_name = "SFX"
-bus_asset = ExtResource("4_33jys")
+bus_asset = ExtResource("6_t6n1r")
 
 [node name="AmbienceLabel" type="Label" parent="ScrollContainer/VBoxContainer" index="6"]
 visible = false
@@ -78,5 +80,6 @@ max_value = 1.0
 step = 0.02
 script = ExtResource("3_vwb7b")
 bus_name = "Ambience"
+bus_asset = ExtResource("4_33jys")
 
 [connection signal="drag_ended" from="ScrollContainer/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]

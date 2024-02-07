@@ -1,0 +1,6 @@
+[gd_resource type="BusAsset" format=3 uid="uid://dlxk731vu8cou"]
+
+[resource]
+path = "bus:/Music"
+guid = "{60a86190-d5e3-4b19-9952-8032cdb9d195}"
+name = "Music"

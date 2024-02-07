@@ -14,7 +14,9 @@ class Events:
 
 class Busses:
 	const MASTER_BUS = "{a732f4ae-00f0-48b7-8678-cce612b7aebc}"
+	const MUSIC = "{60a86190-d5e3-4b19-9952-8032cdb9d195}"
 	const REVERB = "{6bb7214b-6036-4093-b70b-591ca9c34967}"
+	const SFX = "{986b7e0a-1641-4330-9a94-584e1a1a558f}"
 
 class Banks:
 	const MASTER = "{7d5267be-ddff-411d-b66d-d296da6e1d10}"
