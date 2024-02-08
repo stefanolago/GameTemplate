@@ -19,12 +19,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-FmodSound="*res://globals/fmod_sound.tscn"
-FMODRuntime="*res://globals/fmod_runtime_manager.tscn"
 TransitionLayer="*res://globals/transition_layer.tscn"
 PauseScreen="*res://globals/pause_screen.tscn"
 GameSettings="*res://globals/game_settings.gd"
 GameStats="*res://globals/game_stats.gd"
+GlobalAudio="*res://globals/global_audio.tscn"
 
 [debug]
 
@@ -41,7 +40,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/FMOD/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
 
 [file_customization]
 

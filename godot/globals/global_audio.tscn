@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd58v3atird8b"]
+
+[ext_resource type="Script" path="res://globals/global_audio.gd" id="1_mbenn"]
+[ext_resource type="AudioStream" uid="uid://bxvstvsary0fk" path="res://assets/audio/music/cat music.wav" id="2_xdjur"]
+[ext_resource type="AudioStream" uid="uid://y1swyd7o3q7u" path="res://assets/audio/sfx/UI_Hover.wav" id="3_1winn"]
+[ext_resource type="AudioStream" uid="uid://cgccuyl5jkh6t" path="res://assets/audio/sfx/UI_Click.wav" id="4_niuvh"]
+[ext_resource type="AudioStream" uid="uid://c6pu0rjb3k2mf" path="res://assets/audio/sfx/UI_Back.wav" id="5_5pacj"]
+
+[node name="GlobalAudio" type="Node"]
+process_mode = 3
+script = ExtResource("1_mbenn")
+
+[node name="music_menu_main" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xdjur")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="sfx_UI_button_hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1winn")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="sfx_UI_button_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_niuvh")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="sfx_UI_button_back" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5pacj")
+bus = &"SFX"

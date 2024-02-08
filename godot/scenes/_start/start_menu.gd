@@ -8,7 +8,7 @@ enum State {
 
 @export var start_game_scene: PackedScene
 
-var music_instance: EventInstance
+#var music_instance: EventInstance    #FMOD
 var state: State = State.MAIN_VISIBLE:
 	set(value):
 		state = value
@@ -31,12 +31,12 @@ var state: State = State.MAIN_VISIBLE:
 @onready var credits_screen: Credits = $Control/Credits
 
 func _ready() -> void:
-	music_instance = FMODRuntime.create_instance_id(FMODGuids.Events.MUSIC_MENU)
-	music_instance.start()
-	enable_main_screen(true)
-	# load the saved game settings
-	GameSettings.load_settings()
+	#music_instance = FMODRuntime.create_instance_id(FMODGuids.Events.MUSIC_MENU)  #FMOD
+	#music_instance.start()  #FMOD
+	GlobalAudio.fade_in("music_menu_main", 1)
+	GameSettings.load_settings() # load the saved game settings
 	GameSettings.emit_signal("load_all_settings")
+	enable_main_screen(true)
 
 
 func enable_main_screen(enable: bool) -> void:
@@ -69,6 +69,7 @@ func _on_credits_button_pressed() -> void:
 
 
 func _on_credits_back_button_pressed() -> void:
+	GlobalAudio.play_stream("sfx_UI_button_back")
 	state = State.MAIN_VISIBLE
 
 
@@ -87,7 +88,8 @@ func _on_quit_button_pressed() -> void:
 func _on_play_button_pressed() -> void:
 	GameStats.reset_stats() # initialize the stats
 	GameStats.save_stats() # write the config file to save stats
-	music_instance.stop(FMODStudioModule.FMOD_STUDIO_STOP_ALLOWFADEOUT)
+	#music_instance.stop(FMODStudioModule.FMOD_STUDIO_STOP_ALLOWFADEOUT)   #FMOD
+	GlobalAudio.fade_out("music_menu_main", 1)
 	TransitionLayer.change_scene(start_game_scene)
 
 

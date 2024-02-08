@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd58v3atird8b"]
+
+[ext_resource type="Script" path="res://globals/global_audio.gd" id="1_mbenn"]
+[ext_resource type="AudioStream" uid="uid://bxvstvsary0fk" path="res://assets/audio/music/cat music.wav" id="2_xdjur"]
+[ext_resource type="AudioStream" uid="uid://y1swyd7o3q7u" path="res://assets/audio/sfx/UI_Hover.wav" id="3_1winn"]
+
+[node name="GlobalAudio" type="Node"]
+process_mode = 3
+script = ExtResource("1_mbenn")
+
+[node name="music_menu_main" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xdjur")
+bus = &"Music"
+
+[node name="sfx_menu_button_hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1winn")
+bus = &"SFX"
