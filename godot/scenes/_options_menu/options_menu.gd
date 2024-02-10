@@ -19,7 +19,8 @@ signal close_option_menu
 func _ready() -> void:
 	if show_as_pause_screen:
 		back_button.visible = false
-		quit_button.visible = true
+		# button is visible only if not in the web version
+		quit_button.visible = (OS.get_name() != "Web")
 	else:
 		back_button.visible = true
 		quit_button.visible = false

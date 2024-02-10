@@ -29,6 +29,7 @@ var state: State = State.MAIN_VISIBLE:
 @onready var play_button: Button = $Control/Buttons/PlayButton
 @onready var options_menu: OptionsMenu = $Control/OptionsMenu
 @onready var credits_screen: Credits = $Control/Credits
+@onready var quit_button: Button = $Control/Buttons/QuitButton
 
 func _ready() -> void:
 	#music_instance = FMODRuntime.create_instance_id(FMODGuids.Events.MUSIC_MENU)  #FMOD
@@ -37,6 +38,9 @@ func _ready() -> void:
 	GameSettings.load_settings() # load the saved game settings
 	GameSettings.emit_signal("load_all_settings")
 	enable_main_screen(true)
+	
+	# hide the quit button if we are in the web version
+	quit_button.visible = (OS.get_name() != "Web")
 
 
 func enable_main_screen(enable: bool) -> void:
