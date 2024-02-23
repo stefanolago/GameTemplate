@@ -19,11 +19,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-TransitionLayer="*res://globals/transition_layer.tscn"
-PauseScreen="*res://globals/pause_screen.tscn"
-GameSettings="*res://globals/game_settings.gd"
-GameStats="*res://globals/game_stats.gd"
-GlobalAudio="*res://globals/global_audio.tscn"
+TransitionLayer="*res://autoloads/transition_layer.tscn"
+PauseScreen="*res://autoloads/pause_screen.tscn"
+GameSettings="*res://autoloads/game_settings.gd"
+GameStats="*res://autoloads/game_stats.gd"
+GlobalAudio="*res://autoloads/global_audio.tscn"
 
 [debug]
 
@@ -47,9 +47,9 @@ enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
 folder_colors={
 "res://addons/": "blue",
 "res://assets/": "red",
+"res://autoloads/": "yellow",
 "res://engine/": "orange",
 "res://fmod/": "pink",
-"res://globals/": "yellow",
 "res://scenes/": "green",
 "res://scenes/_credits/": "gray",
 "res://scenes/_options_menu/": "gray",

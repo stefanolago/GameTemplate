@@ -1,5 +1,7 @@
 extends Node
 
+class_name AudioWrapper
+
 func play_stream(stream_name:String) -> void:
 	var stream_player:AudioStreamPlayer = $".".get_node(stream_name)
 	stream_player.play()

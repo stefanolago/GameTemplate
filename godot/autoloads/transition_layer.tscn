@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://danxys2mt5kqj"]
 
-[ext_resource type="Script" path="res://globals/transition_layer.gd" id="1_m2dqr"]
+[ext_resource type="Script" path="res://autoloads/transition_layer.gd" id="1_m2dqr"]
 
 [sub_resource type="Animation" id="Animation_focd0"]
 length = 0.001

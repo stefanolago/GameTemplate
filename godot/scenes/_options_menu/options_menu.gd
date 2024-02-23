@@ -27,7 +27,7 @@ func _ready() -> void:
 
 
 func _on_back_button_pressed() -> void:
-	GlobalAudio.play_stream("sfx_UI_button_back")
+	(GlobalAudio as AudioWrapper).play_stream("sfx_UI_button_back")
 	close_option_menu.emit()
 
 

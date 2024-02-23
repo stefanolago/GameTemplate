@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bks7osmdb636n"]
 
-[ext_resource type="Script" path="res://globals/fmod_sound.gd" id="1_nlus6"]
+[ext_resource type="Script" path="res://autoloads/fmod_sound.gd" id="1_nlus6"]
 
 [sub_resource type="BankAsset" id="BankAsset_1qa6y"]
 file_path = "res://fmod/banks/Master.bank"
