@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-enum State {
+# TODO Substitute with proper state machines
+enum MenuState {
 	MAIN_VISIBLE,
 	OPTIONS_VISIBLE,
 	CREDITS_VISIBLE
@@ -9,19 +10,19 @@ enum State {
 @export var start_game_scene: PackedScene
 
 #var music_instance: EventInstance    #FMOD
-var state: State = State.MAIN_VISIBLE:
+var state: MenuState = MenuState.MAIN_VISIBLE:
 	set(value):
 		state = value
 		match state:
-			State.MAIN_VISIBLE:
+			MenuState.MAIN_VISIBLE:
 				enable_main_screen(true)
 				enable_options_screen(false)
 				enable_credits_screen(false)
-			State.OPTIONS_VISIBLE:
+			MenuState.OPTIONS_VISIBLE:
 				enable_main_screen(false)
 				enable_options_screen(true)
 				enable_credits_screen(false)
-			State.CREDITS_VISIBLE:
+			MenuState.CREDITS_VISIBLE:
 				enable_main_screen(false)
 				enable_options_screen(false)
 				enable_credits_screen(true)
@@ -69,20 +70,20 @@ func enable_credits_screen(enable: bool) -> void:
 
 
 func _on_credits_button_pressed() -> void:
-	state = State.CREDITS_VISIBLE
+	state = MenuState.CREDITS_VISIBLE
 
 
 func _on_credits_back_button_pressed() -> void:
 	GlobalAudio.play_stream("sfx_UI_button_back")
-	state = State.MAIN_VISIBLE
+	state = MenuState.MAIN_VISIBLE
 
 
 func _on_options_button_pressed() -> void:
-	state = State.OPTIONS_VISIBLE
+	state = MenuState.OPTIONS_VISIBLE
 
 
 func _on_options_menu_close_option_menu() -> void:
-	state = State.MAIN_VISIBLE
+	state = MenuState.MAIN_VISIBLE
 
 
 func _on_quit_button_pressed() -> void:
@@ -101,9 +102,9 @@ func _input(_event: InputEvent) -> void:
 	if get_viewport().gui_get_focus_owner() == null:
 		#play_button.grab_focus()
 		match state:
-			State.MAIN_VISIBLE:
+			MenuState.MAIN_VISIBLE:
 				play_button.grab_focus()
-			State.OPTIONS_VISIBLE:
+			MenuState.OPTIONS_VISIBLE:
 				options_menu.focus_first_available_control()
-			State.CREDITS_VISIBLE:
+			MenuState.CREDITS_VISIBLE:
 				credits_screen.focus_first_available_control()

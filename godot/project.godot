@@ -54,7 +54,8 @@ folder_colors={
 "res://scenes/_credits/": "gray",
 "res://scenes/_options_menu/": "gray",
 "res://scenes/_start/": "gray",
-"res://scenes/_utils/": "gray"
+"res://scenes/_utils/": "gray",
+"res://utils/": "gray"
 }
 
 [fmod]
