@@ -49,7 +49,6 @@ folder_colors={
 "res://assets/": "red",
 "res://autoloads/": "yellow",
 "res://engine/": "orange",
-"res://fmod/": "pink",
 "res://scenes/": "green",
 "res://scenes/_credits/": "gray",
 "res://scenes/_options_menu/": "gray",

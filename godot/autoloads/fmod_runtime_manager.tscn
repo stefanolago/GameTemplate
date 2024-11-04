@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxu0r6t34bfar"]
-
-[ext_resource type="Script" path="res://addons/FMOD/runtime/fmod_runtime_manager.gd" id="1_mg2me"]
-
-[node name="FmodRuntimeManager" type="Node"]
-process_mode = 3
-script = ExtResource("1_mg2me")
