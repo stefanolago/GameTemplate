@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://otacf7gyxcpp"]
 
-[ext_resource type="PackedScene" uid="uid://vg8so2noge5l" path="res://scenes/_options_menu/base_option_container.tscn" id="1_agfwp"]
-[ext_resource type="Script" path="res://scenes/_options_menu/audio/audio_options.gd" id="2_5rfua"]
-[ext_resource type="Script" path="res://scenes/_options_menu/audio/volume_slider.gd" id="3_vwb7b"]
+[ext_resource type="PackedScene" uid="uid://vg8so2noge5l" path="res://menu_and_options/_options_menu/base_option_container.tscn" id="1_agfwp"]
+[ext_resource type="Script" path="res://menu_and_options/_options_menu/audio/audio_options.gd" id="2_5rfua"]
+[ext_resource type="Script" path="res://menu_and_options/_options_menu/audio/volume_slider.gd" id="3_vwb7b"]
 
 [node name="AudioOptions" instance=ExtResource("1_agfwp")]
 script = ExtResource("2_5rfua")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://vg8so2noge5l"]
 
-[ext_resource type="Script" path="res://scenes/_options_menu/base_option_container.gd" id="1_0blhu"]
+[ext_resource type="Script" path="res://menu_and_options/_options_menu/base_option_container.gd" id="1_0blhu"]
 
 [node name="BaseOptionContainer" type="Control"]
 layout_mode = 3

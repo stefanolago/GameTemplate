@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnqo4s30b70bv"]
 
-[ext_resource type="Script" path="res://scenes/_options_menu/control/keybinding_button.gd" id="1_meb56"]
+[ext_resource type="Script" path="res://menu_and_options/_options_menu/control/keybinding_button.gd" id="1_meb56"]
 
 [sub_resource type="Theme" id="Theme_yd13l"]
 BoxContainer/constants/separation = 50

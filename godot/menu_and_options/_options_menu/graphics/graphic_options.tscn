@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0l8f2a2moux7"]
 
-[ext_resource type="PackedScene" uid="uid://vg8so2noge5l" path="res://scenes/_options_menu/base_option_container.tscn" id="1_un745"]
-[ext_resource type="Script" path="res://scenes/_options_menu/graphics/graphic_options.gd" id="2_jalhp"]
-[ext_resource type="PackedScene" uid="uid://snqowq1n0sbl" path="res://scenes/_options_menu/graphics/window_mode_options.tscn" id="3_sghtq"]
-[ext_resource type="PackedScene" uid="uid://chc664f6apikt" path="res://scenes/_options_menu/graphics/resolution_options.tscn" id="4_rokyq"]
+[ext_resource type="PackedScene" uid="uid://vg8so2noge5l" path="res://menu_and_options/_options_menu/base_option_container.tscn" id="1_un745"]
+[ext_resource type="Script" path="res://menu_and_options/_options_menu/graphics/graphic_options.gd" id="2_jalhp"]
+[ext_resource type="PackedScene" uid="uid://snqowq1n0sbl" path="res://menu_and_options/_options_menu/graphics/window_mode_options.tscn" id="3_sghtq"]
+[ext_resource type="PackedScene" uid="uid://chc664f6apikt" path="res://menu_and_options/_options_menu/graphics/resolution_options.tscn" id="4_rokyq"]
 
 [node name="GraphicOptions" instance=ExtResource("1_un745")]
 script = ExtResource("2_jalhp")

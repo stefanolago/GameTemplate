@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://c5b4ept8e4kb1"]
 
 [ext_resource type="Texture2D" uid="uid://dd0vjpr1nkvah" path="res://assets/art/splash/GWJ-Full-Logo-tag-Orange2.png" id="1_d8wq5"]
-[ext_resource type="Script" path="res://scenes/_start/start_screen.gd" id="1_ng81h"]
-[ext_resource type="PackedScene" uid="uid://b8i4dav4givqf" path="res://scenes/_start/start_menu.tscn" id="2_n5fsx"]
+[ext_resource type="Script" path="res://menu_and_options/_start/start_screen.gd" id="1_ng81h"]
+[ext_resource type="PackedScene" uid="uid://b8i4dav4givqf" path="res://menu_and_options/_start/start_menu.tscn" id="2_n5fsx"]
 [ext_resource type="Texture2D" uid="uid://c8tf22np2amql" path="res://assets/art/lights/circle.png" id="3_6lwqq"]
 [ext_resource type="Texture2D" uid="uid://dv26vjh7itr3x" path="res://assets/art/splash/65-Overload.png" id="5_2gc66"]
 [ext_resource type="Texture2D" uid="uid://bt6bmv0xk7rub" path="res://assets/art/splash/controller_icon.png" id="5_jd6n2"]

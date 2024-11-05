@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkhsruehu1ue6"]
 
-[ext_resource type="Script" path="res://scenes/_credits/credits.gd" id="1_v0gdx"]
-[ext_resource type="Script" path="res://scenes/_utils/button_with_sound.gd" id="2_5h8dr"]
+[ext_resource type="Script" path="res://menu_and_options/_credits/credits.gd" id="1_v0gdx"]
+[ext_resource type="Script" path="res://menu_and_options/_utils/button_with_sound.gd" id="2_5h8dr"]
 
 [sub_resource type="Theme" id="Theme_ba7kw"]
 Label/font_sizes/font_size = 25

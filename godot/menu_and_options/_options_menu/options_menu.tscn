@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bxlfyph8igh8b"]
 
-[ext_resource type="Script" path="res://scenes/_options_menu/options_menu.gd" id="1_lpdjf"]
-[ext_resource type="PackedScene" uid="uid://b0l8f2a2moux7" path="res://scenes/_options_menu/graphics/graphic_options.tscn" id="2_wg4hq"]
-[ext_resource type="PackedScene" uid="uid://dc1hi8xrpang6" path="res://scenes/_options_menu/gameplay/gameplay_options.tscn" id="3_55qv2"]
-[ext_resource type="PackedScene" uid="uid://bn262vdj37am2" path="res://scenes/_options_menu/control/controls_options.tscn" id="3_x3wbb"]
-[ext_resource type="PackedScene" uid="uid://otacf7gyxcpp" path="res://scenes/_options_menu/audio/audio_options.tscn" id="4_a1oik"]
-[ext_resource type="Script" path="res://scenes/_utils/button_with_sound.gd" id="5_0nyx0"]
+[ext_resource type="Script" path="res://menu_and_options/_options_menu/options_menu.gd" id="1_lpdjf"]
+[ext_resource type="PackedScene" uid="uid://b0l8f2a2moux7" path="res://menu_and_options/_options_menu/graphics/graphic_options.tscn" id="2_wg4hq"]
+[ext_resource type="PackedScene" uid="uid://dc1hi8xrpang6" path="res://menu_and_options/_options_menu/gameplay/gameplay_options.tscn" id="3_55qv2"]
+[ext_resource type="PackedScene" uid="uid://bn262vdj37am2" path="res://menu_and_options/_options_menu/control/controls_options.tscn" id="3_x3wbb"]
+[ext_resource type="PackedScene" uid="uid://otacf7gyxcpp" path="res://menu_and_options/_options_menu/audio/audio_options.tscn" id="4_a1oik"]
+[ext_resource type="Script" path="res://menu_and_options/_utils/button_with_sound.gd" id="5_0nyx0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muirh"]
 bg_color = Color(0.180392, 0.180392, 0.180392, 1)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dc1hi8xrpang6"]
 
-[ext_resource type="PackedScene" uid="uid://dd3bbxwgn73xi" path="res://scenes/_options_menu/gameplay/difficulty_options.tscn" id="1_xw8kt"]
+[ext_resource type="PackedScene" uid="uid://dd3bbxwgn73xi" path="res://menu_and_options/_options_menu/gameplay/difficulty_options.tscn" id="1_xw8kt"]
 
 [node name="GameplayOptions" type="Control"]
 layout_mode = 3
