@@ -15,9 +15,9 @@ func _ready() -> void:
 		options_button.add_item(difficulty_mode)
 	GameSettings.connect('load_all_settings', load_settings)
 
+
 func load_settings() -> void:
 	options_button.selected =  GameSettings.difficulty_setting # load previous settings on UI
-	options_button.item_selected.connect(on_difficulty_selected)
 	
 
 func on_difficulty_selected(index: int, save_settings:bool = true) -> void:

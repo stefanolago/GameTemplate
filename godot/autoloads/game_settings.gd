@@ -2,6 +2,7 @@ extends Node
 
 
 signal load_all_settings
+signal saved_settings
 
 ## GRAPHICS ##
 var window_mode: int = 1
@@ -44,6 +45,7 @@ func save_settings() -> void:
 	config.set_value("Settings", "haptics_strenght", haptics_strenght)
 
 	config.save("user://settings_data.cfg")
+	saved_settings.emit()
 
 
 # load the game settings from the local config file
@@ -69,3 +71,4 @@ func load_settings() -> void:
 	## CONTROLS ##
 	haptics_strenght = config.get_value("Settings", "haptics_strenght")
 
+	load_all_settings.emit()
