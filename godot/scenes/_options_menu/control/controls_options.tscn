@@ -9,9 +9,6 @@ font_size = 25
 [node name="ControlsOptions" instance=ExtResource("1_2jppr")]
 script = ExtResource("2_byjrj")
 
-[node name="Confirm" parent="." index="0"]
-visible = true
-
 [node name="ScrollContainer" type="ScrollContainer" parent="." index="1"]
 layout_mode = 1
 anchors_preset = -1
@@ -54,6 +51,7 @@ text = "Press a key"
 label_settings = SubResource("LabelSettings_a46hf")
 
 [node name="Haptics" type="CheckBox" parent="." index="3"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.670139

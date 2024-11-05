@@ -14,10 +14,13 @@ const RESOLUTION_DICTIONARY: Dictionary = {
 func _ready() -> void:
 	for resolution: String in RESOLUTION_DICTIONARY:
 		options_button.add_item(resolution)
-	GameSettings.connect('load_all_settings', load_settings)
+
+	options_button.item_selected.connect(on_resolution_selected)
+	GameSettings.load_all_settings.connect(update_settings)
+	GameSettings.saved_settings.connect(update_settings)
 
 
-func load_settings() -> void:
+func update_settings() -> void:
 	options_button.selected = GameSettings.resolution # load previous settings on UI
 	on_resolution_selected(GameSettings.resolution, false) # apply previous settings, don't save
 

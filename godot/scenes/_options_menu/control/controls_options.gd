@@ -20,11 +20,13 @@ var custom_inputs_that_reflect_on_built_in_inputs: Dictionary = {
 	"down": ["ui_down"]
 }
 
+var accepted_input_actions: Array[StringName] = ["left", "up", "right", "down"]
+
 func _ready() -> void:
-	var inputs: Array[StringName] = InputMap.get_actions()
+	
 
 	# retrieve the possible actions, by removing the built-in ones
-	for action: StringName in inputs:
+	for action: StringName in accepted_input_actions:
 		if(!action.contains("ui_")):
 			configurable_inputs.append(action)
 
@@ -34,6 +36,15 @@ func _ready() -> void:
 		container.add_child(button)
 		button.input_name = input
 		button.change_keybinding.connect(_on_keybinding_button_change_keybinding)
+	
+	
+	GameSettings.load_all_settings.connect(update_settings)
+	GameSettings.saved_settings.connect(update_settings)
+
+
+func update_settings() -> void:
+	for button: KeybindingButton in container.get_children():
+		button.update_content()
 
 
 # when the change button of a row is pressed, then the 
@@ -68,6 +79,7 @@ func _input(event: InputEvent) -> void:
 		# close the popup
 		waiting_for_input = false
 		keypress_popup.visible = false
+		GameSettings.save_settings()
 
 
 # remove an inputevent from all of the actions to which it is binded

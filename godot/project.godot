@@ -48,13 +48,13 @@ folder_colors={
 "res://addons/": "blue",
 "res://assets/": "red",
 "res://autoloads/": "yellow",
-"res://engine/": "orange",
 "res://scenes/": "green",
 "res://scenes/_credits/": "gray",
 "res://scenes/_options_menu/": "gray",
 "res://scenes/_start/": "gray",
 "res://scenes/_utils/": "gray",
-"res://utils/": "gray"
+"res://utils/": "gray",
+"res://vfx/": "orange"
 }
 
 [fmod]
