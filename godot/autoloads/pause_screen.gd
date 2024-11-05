@@ -12,6 +12,9 @@ var game_is_paused: bool = false:
 		game_is_paused = value
 		if game_is_paused:
 			mouse_mode_before_pause = Input.mouse_mode
+			Input.mouse_mode = Input.MouseMode.MOUSE_MODE_VISIBLE
+
+			options_menu.focus_first_available_control()
 		else:
 			Input.mouse_mode = mouse_mode_before_pause
 
@@ -32,4 +35,3 @@ func _input(event: InputEvent) -> void:
 		if current_scene_name == "StartMenu" or current_scene_name == "StartScreen":
 			return
 		game_is_paused = !game_is_paused
-		options_menu.focus_first_available_control()

@@ -4,7 +4,7 @@ extends BaseOption
 
 @onready var container: VBoxContainer = $ScrollContainer/ButtonsContainer
 @onready var keypress_popup: ColorRect = $KeyPressPopup
-var keybinding_button: PackedScene = preload("res://scenes/_options_menu/control/keybinding_button.tscn")
+var keybinding_button: PackedScene = preload("res://menu_and_options/_options_menu/control/keybinding_button.tscn")
 
 
 var configurable_inputs: Array[StringName]

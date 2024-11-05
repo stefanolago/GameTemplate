@@ -2,7 +2,8 @@ extends Node
 
 class_name State
 
-signal transitioned()
+@warning_ignore("unused_signal")
+signal transition(new_state_name: StringName)
 
 func enter() -> void:
 	pass

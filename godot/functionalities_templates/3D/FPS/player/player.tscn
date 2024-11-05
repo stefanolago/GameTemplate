@@ -1,0 +1,237 @@
+[gd_scene load_steps=16 format=3 uid="uid://c38fq3s421dv7"]
+
+[ext_resource type="Script" path="res://functionalities_templates/3D/FPS/player/player.gd" id="1_ka65t"]
+[ext_resource type="Script" path="res://utils/state_machine.gd" id="2_02ewx"]
+[ext_resource type="Script" path="res://functionalities_templates/3D/FPS/player/reticle.gd" id="2_qpjmq"]
+[ext_resource type="Script" path="res://functionalities_templates/3D/FPS/player/states/idle_player_state.gd" id="3_7nqvy"]
+[ext_resource type="Texture2D" uid="uid://b8bmw6uw8ahwt" path="res://assets/art/kenney_cursor_pack/PNG/Basic/Double/dot_small.png" id="3_8nlh0"]
+[ext_resource type="Script" path="res://functionalities_templates/3D/FPS/player/states/walking_player_state.gd" id="4_8rwua"]
+[ext_resource type="Script" path="res://functionalities_templates/3D/FPS/player/states/interacting_player_state.gd" id="5_dmut4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_26muc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o2d24"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_0b3xw"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = false
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_7ljw3"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 3
+access_resolved_color = false
+access_resolved_depth = false
+needs_motion_vectors = false
+needs_normal_roughness = true
+
+[sub_resource type="Compositor" id="Compositor_wprkh"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_0b3xw"), SubResource("CompositorEffect_7ljw3")])
+
+[sub_resource type="Animation" id="Animation_7lo33"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraController:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CameraController:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_m3onj"]
+resource_name = "walking"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CameraController:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.0151787, -0.25, 0, 0.25, 0, -1.14031e-05, -0.25, 0, 0.25, 0, -0.0147625, -0.25, 0, 0.25, 0, -1.14022e-05, -0.25, 0, 0.25, 0, 0.0149153, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4995, 0.999, 1.4985, 1.998)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CameraController:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1.49963, -0.25, 0, 0.2331, 0.00663817, 1.6, -0.25, 0, 0.25, 0, 1.5, -0.1675, 0.00588143, 0.2321, 0.0047245, 1.6, -0.25, 0, 0.25, 0, 1.5, -0.1352, 0.00498152, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1, 1.4985, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CameraController:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.999, 1.998),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"footstep_sound"
+}, {
+"args": [],
+"method": &"footstep_sound"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4g8la"]
+_data = {
+"RESET": SubResource("Animation_7lo33"),
+"walking": SubResource("Animation_m3onj")
+}
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 2
+script = ExtResource("1_ka65t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_26muc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+gi_mode = 0
+mesh = SubResource("CapsuleMesh_o2d24")
+skeleton = NodePath("../..")
+
+[node name="Hand" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241, 1.401, 0.081)
+
+[node name="Torch" type="SpotLight3D" parent="Hand"]
+unique_name_in_owner = true
+light_color = Color(0.590858, 0.784141, 0.867837, 1)
+light_energy = 6.0
+light_volumetric_fog_energy = 5.908
+shadow_enabled = true
+spot_attenuation = 2.0
+spot_angle = 25.0
+spot_angle_attenuation = 1.36603
+
+[node name="CameraController" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraController"]
+compositor = SubResource("Compositor_wprkh")
+far = 6000.0
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="CameraController/Camera3D"]
+visible = false
+size = Vector3(10, 10, 10)
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Reticle" type="CenterContainer" parent="UserInterface"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_qpjmq")
+
+[node name="ReticleTexture" type="TextureRect" parent="UserInterface/Reticle"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_8nlh0")
+
+[node name="DebugPanel" type="PanelContainer" parent="UserInterface"]
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 210.0
+offset_bottom = 50.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UserInterface/DebugPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/DebugPanel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4g8la")
+}
+
+[node name="PlayerStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_02ewx")
+initial_state = NodePath("IdlePlayerState")
+
+[node name="IdlePlayerState" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("3_7nqvy")
+
+[node name="WalkingPlayerState" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("4_8rwua")
+
+[node name="InteractingPlayerState" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("5_dmut4")
+
+[node name="footstep_raycast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.590554, 0)
+collision_mask = 32
+collide_with_areas = true
+debug_shape_custom_color = Color(1, 0, 1, 1)
