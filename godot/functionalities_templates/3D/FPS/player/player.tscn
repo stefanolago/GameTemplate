@@ -197,21 +197,6 @@ unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("3_8nlh0")
 
-[node name="DebugPanel" type="PanelContainer" parent="UserInterface"]
-visible = false
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 210.0
-offset_bottom = 50.0
-
-[node name="MarginContainer" type="MarginContainer" parent="UserInterface/DebugPanel"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/DebugPanel/MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_4g8la")

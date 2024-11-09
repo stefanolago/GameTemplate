@@ -1,4 +1,4 @@
-extends PlayerState
+extends Player3DState
 
 var interacting_object: Node
 

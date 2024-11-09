@@ -1,4 +1,4 @@
-class_name Player extends CharacterBody3D
+class_name Player3D extends CharacterBody3D
 
 
 @onready var camera_controller: Node3D = $CameraController
@@ -11,7 +11,6 @@ class_name Player extends CharacterBody3D
 @onready var footstep_raycast: RayCast3D = $footstep_raycast
 
 @export var mouse_sensitivity: float = 0.5
-#@export var camera_acceleration: float = 2.0
 @export var tilt_lower_limit: float = deg_to_rad(-90.0)
 @export var tilt_upper_limit: float = deg_to_rad(90.0)
 ## How far the player can interact.
@@ -117,14 +116,20 @@ func interact_cast() -> void:
 		if interact_cast_result and interact_cast_result.has_user_signal("focused"):
 			interact_cast_result.emit_signal("focused")
 		
+		update_reticle()
 
 func can_interact() -> bool:
 	return interact_cast_result and interact_cast_result.has_user_signal("interacted")
 
 
-func update_reticle(texture: Texture2D) -> void:
+func update_reticle() -> void:
 	if reticle:
-		reticle.update_texture(texture)
+		if interact_cast_result:
+			pass
+			#reticle.update_texture(interact_cast_result)
+		else:
+			reticle.update_texture(null)
+
 
 func footstep_sound() -> void:
 	print("emit footstep sound")

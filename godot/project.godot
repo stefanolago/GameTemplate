@@ -25,6 +25,7 @@ GameSettings="*res://autoloads/game_settings.gd"
 GameStats="*res://autoloads/game_stats.gd"
 GlobalAudio="*res://autoloads/global_audio.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+PreloadedMaterials="*res://autoloads/preloaded_materials.gd"
 
 [debug]
 

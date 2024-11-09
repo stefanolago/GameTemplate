@@ -1,4 +1,4 @@
-extends PlayerState
+extends Player3DState
 
 @export var speed: float = 5.0
 @export var acceleration: float = 0.1
