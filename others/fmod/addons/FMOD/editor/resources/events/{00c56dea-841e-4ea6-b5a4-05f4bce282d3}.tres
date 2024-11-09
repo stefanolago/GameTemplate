@@ -1,8 +1,0 @@
-[gd_resource type="EventAsset" format=3 uid="uid://dmbi7btu8g4e1"]
-
-[resource]
-min_distance = 1.0
-max_distance = 20.0
-path = "event:/Music_Menu"
-guid = "{00c56dea-841e-4ea6-b5a4-05f4bce282d3}"
-name = "Music_Menu"

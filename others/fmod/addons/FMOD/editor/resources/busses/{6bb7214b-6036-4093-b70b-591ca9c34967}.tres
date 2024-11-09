@@ -1,6 +1,0 @@
-[gd_resource type="BusAsset" format=3 uid="uid://bvh5qgjmrdl87"]
-
-[resource]
-path = "bus:/Reverb"
-guid = "{6bb7214b-6036-4093-b70b-591ca9c34967}"
-name = "Reverb"

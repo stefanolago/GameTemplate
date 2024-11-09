@@ -1,6 +1,0 @@
-[gd_resource type="BusAsset" format=3 uid="uid://bt4aumspbn0hm"]
-
-[resource]
-path = "bus:/"
-guid = "{a732f4ae-00f0-48b7-8678-cce612b7aebc}"
-name = "Master"

@@ -1,6 +1,0 @@
-[gd_resource type="BusAsset" format=3 uid="uid://cjpgjhvwi5iuq"]
-
-[resource]
-path = "bus:/SFX"
-guid = "{08c1fedf-5513-4bfe-9fbe-722fae1ac305}"
-name = "SFX"

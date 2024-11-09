@@ -1,9 +1,0 @@
-[gd_resource type="EventAsset" format=3 uid="uid://bdl72xl5egm1g"]
-
-[resource]
-is_oneshot = true
-min_distance = 1.0
-max_distance = 20.0
-path = "event:/UI_Hover"
-guid = "{8e6de219-7ec1-4f3d-ac02-c0078845b703}"
-name = "UI_Hover"
