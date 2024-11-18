@@ -24,6 +24,8 @@ func _ready() -> void:
 	else:
 		back_button.visible = true
 		quit_button.visible = false
+		
+	GameSettings.load_settings()
 
 
 func _on_back_button_pressed() -> void:

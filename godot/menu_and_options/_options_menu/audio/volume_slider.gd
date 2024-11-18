@@ -10,7 +10,7 @@ func _ready() -> void:
 	#bus = FMODStudioModule.get_studio_system().get_bus(bus_asset.path)   #FMOD
 	bus_index = AudioServer.get_bus_index(bus_name)
 	drag_ended.connect(_on_drag_ended)
-	GameSettings.connect('load_all_settings', update_settings)
+	GameSettings.load_all_settings.connect(update_settings)
 	GameSettings.saved_settings.connect(update_settings)
 	value_changed.connect(on_value_changed)
 

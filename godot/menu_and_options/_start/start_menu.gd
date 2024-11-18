@@ -36,8 +36,6 @@ func _ready() -> void:
 	#music_instance = FMODRuntime.create_instance_id(FMODGuids.Events.MUSIC_MENU)  #FMOD
 	#music_instance.start()  #FMOD
 	GlobalAudio.fade_in("music_menu_main", 1)
-	GameSettings.load_settings() # load the saved game settings
-	GameSettings.emit_signal("load_all_settings")
 	enable_main_screen(true)
 	
 	# hide the quit button if we are in the web version
