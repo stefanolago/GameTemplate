@@ -72,7 +72,7 @@ func _on_credits_button_pressed() -> void:
 
 
 func _on_credits_back_button_pressed() -> void:
-	GlobalAudio.play_stream("sfx_UI_button_back")
+	GlobalAudio.play_one_shot("sfx_UI_button_back")
 	state = MenuState.MAIN_VISIBLE
 
 

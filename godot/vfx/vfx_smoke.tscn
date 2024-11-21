@@ -30,9 +30,9 @@ turbulence_enabled = true
 turbulence_noise_speed = Vector3(0.5, 0.5, 0.5)
 turbulence_noise_speed_random = 0.0
 
-[node name="VFX_smoke" type="Node2D"]
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="GPUParticles2D"]
+emitting = false
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_c4w7q")
+one_shot = true
 explosiveness = 0.9
